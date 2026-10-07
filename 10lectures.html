@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les dix lecteurs du Coran</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f6efe0;color:#1f3a3d;font-family:'Cormorant Garamond',Georgia,serif}
+.page{max-width:960px;margin:0 auto;padding:48px 22px 60px}
+.img {    max-width: 100%;
+    width: 40rem;
+    object-fit: contain;
+    border: 2px solid grey;
+    margin: 3rem auto;
+    display: block;}
+.ar{font-family:'Amiri',serif;direction:rtl}
+h1{font-weight:500;font-size:38px;margin:6px 0 4px;text-align:center;letter-spacing:.5px}
+.sub{text-align:center;font-size:19px;color:#6b5a38;margin:0 auto 6px;max-width:520px;line-height:1.5}
+.title-ar{text-align:center;font-size:50px;color:#8e6c24;line-height:1.3}
+.orn{display:block;margin:10px auto 26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:#fbf7ec;border:1px solid #d9c9a0;padding:18px 18px 16px;position:relative}
+.card:before{content:"";position:absolute;inset:5px;border:1px solid #e9dcb9;pointer-events:none}
+.num{position:absolute;top:12px;left:14px;font-size:15px;color:#8e6c24}
+button{font-family:inherit;cursor:pointer;border-radius:0}
+.rd{display:block;background:none;border:0;border-bottom:1px solid #8e6c24;padding:0 0 1px;margin:8px 0 0 28px;font-size:26px;font-weight:500;color:#1f3a3d;text-align:left}
+.rd:hover,.ch:hover,.rg:hover{color:#8c2f2b;border-color:#8c2f2b}
+.meta{margin:6px 0 12px 28px;font-size:16px;color:#6b5a38}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-left:28px}
+.ch{background:#f0e6cc;border:1px solid #d9c9a0;padding:4px 14px;font-size:18px;color:#1f3a3d}
+h2{font-weight:500;font-size:28px;text-align:center;margin:44px 0 4px}
+.regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px}
+.reg{border-top:1px solid #8e6c24;padding:12px 4px;font-size:18px;line-height:1.45;color:#3c4a48}
+.rg{background:none;border:0;border-bottom:1px solid #8e6c24;padding:0;font-size:22px;font-weight:500;color:#1f3a3d;margin-bottom:4px}
+.note{max-width:620px;margin:44px auto 0;border:1px solid #8e6c24;background:#fbf7ec;padding:18px 22px;text-align:center;font-size:19px;line-height:1.55;color:#26403f;position:relative}
+.note:before{content:"";position:absolute;inset:4px;border:1px solid #e9dcb9;pointer-events:none}
+.note b{display:block;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#8e6c24;margin-bottom:6px}
+footer{text-align:center;margin-top:40px}
+
+#ov{display:none;position:fixed;inset:0;background:rgba(24,44,46,.75);padding:24px 14px;z-index:10;overflow-y:auto}
+#ov.on{display:block}
+#md{max-width:680px;margin:0 auto;background:#fbf7ec;border:1px solid #8e6c24;padding:40px 36px 34px;position:relative}
+#md:before{content:"";position:absolute;inset:8px;border:1px solid #d9c9a0;pointer-events:none}
+#cl{position:absolute;top:14px;right:18px;background:none;border:0;font-size:32px;line-height:1;color:#8c2f2b;padding:2px 8px;z-index:2}
+#md .kind{text-align:center;font-size:18px;letter-spacing:2px;text-transform:uppercase;color:#8e6c24}
+#md .ar-name{text-align:center;font-size:60px;line-height:1.4;margin:4px 0 0}
+#md h3{text-align:center;font-weight:500;font-size:34px;margin:0 0 4px}
+#md .facts{display:flex;justify-content:center;gap:8px 24px;flex-wrap:wrap;font-size:17px;color:#6b5a38;margin:8px 0 8px}
+#md .bio p{font-size:21px;line-height:1.65;margin:0 0 14px;color:#26403f}
+#md .sp{margin-top:18px;border-top:1px solid #d9c9a0;padding-top:14px}
+#md .sp span{display:block;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#8e6c24;margin-bottom:8px}
+#md .sp ul{margin:0;padding:0;list-style:none}
+#md .sp li{font-size:20px;line-height:1.55;color:#26403f;padding:3px 0 3px 22px;position:relative}
+#md .sp li:before{content:"";position:absolute;left:4px;top:13px;width:7px;height:7px;background:#8c2f2b;transform:rotate(45deg)}
+#md .links{margin-top:18px;border-top:1px solid #d9c9a0;padding-top:16px;text-align:center}
+#md .links span{display:block;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#8e6c24;margin-bottom:8px}
+#md .links .ch{margin:3px 4px}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="title-ar ar">القراء العشرة</div>
+  <h1>Les dix lecteurs authentiques du Coran</h1>
+  <p class="sub">et leurs deux rapporteurs. Cliquez sur un nom pour ouvrir sa biographie.</p>
+  <svg class="orn" width="220" height="22" viewBox="0 0 220 22" aria-hidden="true"><line x1="0" y1="11" x2="90" y2="11" stroke="#8e6c24"/><line x1="130" y1="11" x2="220" y2="11" stroke="#8e6c24"/><rect x="99" y="2" width="18" height="18" fill="none" stroke="#8e6c24" stroke-width="1.2"/><rect x="99" y="2" width="18" height="18" fill="none" stroke="#8e6c24" stroke-width="1.2" transform="rotate(45 108 11)"/><circle cx="108" cy="11" r="2.4" fill="#8c2f2b"/></svg>
+
+<img class="img" src="the-ten-reciters-of-the-quran-v0-mjsebizbuy9b1.webp" alt="">
+
+  <div class="grid" id="grid"></div>
+
+  <h2>Où les lit-on&nbsp;?</h2>
+  <div class="regions" id="regions"></div>
+
+  <div class="note"><b>À retenir</b>Il est interdit de faire l'exégèse du Coran par simple ijtihad personnel : cela revient à parler d'Allah sans science.</div>
+
+</main>
+
+<footer>Dates et biographies à compléter et vérifier avec vos sources.</footer>
+
+
+<div id="ov" role="dialog" aria-modal="true" aria-label="Biographie">
+  <div id="md"><button id="cl" aria-label="Fermer">×</button><div id="mc"></div></div>
+</div>
+
+<script>
+var P={
+nafi:{n:"Nâfi'",ar:"نافع",k:"Lecteur",v:"Médine",d:"70 – 169 H (≈ 689 – 785)",
+ b:["Nâfi' était noir de peau et d'origine iranienne. Il étudia auprès de 70 compagnons du Prophète (sahabas).",
+    "Il sentait le musc quand il parlait. Cela vient de ce qu'il a récité le Coran au Prophète ﷺ durant son sommeil, et que le Prophète lui a serré la main.",
+    "Il est l'imam de la lecture à Médine. L'imam Mâlik, son élève, qualifiait sa lecture de « sounnah ».",
+    "Deux rapporteurs la transmettent : Qaloun et Warch. Leurs deux variantes sont différentes l'une de l'autre."],r:["qaloun","warch"]},
+kathir:{n:"Ibn Kathîr",ar:"ابن كثير",k:"Lecteur",v:"La Mecque",d:"45 – 120 H (≈ 665 – 738)",
+ b:["'Abdoullah ibn Kathîr al-Qourachiy était grand et corpulent, métis, éloquent, orateur et serein. Il est l'imam de la lecture à La Mecque.",
+    "Ach-Châfi'iy récitait selon sa lecture.",
+    "Sa lecture est transmise par Qounboul et Elbazzi."],
+ s:["Il prolongeait le ha (pronom) lorsqu'il est précédé d'un soukoun, comme dans « 'anhou » (sourate Al-Masad)."],r:["qounboul","bazzi"]},
+amr:{n:"Abou 'Amr",ar:"أبو عمرو",k:"Lecteur",v:"La Mecque, Irak",d:"68 – 154 H (≈ 687 – 770)",
+ b:["Mecquois, de descendance 'adnânite, tâbi'iy. Il a lu auprès d'Al-Basriy.",
+    "Savant en grammaire, en fiqh et en lectures coraniques. Il est mort à Koufa.",
+    "Sa lecture est transmise par Eddouri et Essoussi."],r:["douri1","soussi"]},
+amir:{n:"Ibn 'Âmir",ar:"ابن عامر",k:"Lecteur",v:"Châm (Damas)",d:"21 – 118 H (≈ 642 – 736)",
+ b:["Il vivait au Châm. Élève du compagnon Abou Dardâ', il est le plus ancien des sept lecteurs.",
+    "Sa lecture est transmise par Hichâm et Ibn Dhakwân."],r:["hicham","dhakwan"]},
+asim:{n:"'Âsim",ar:"عاصم",k:"Lecteur",v:"Koufa, Irak",d:"décès en 127 H (745)",
+ b:["'Âsim avait une belle voix. Il vivait à Koufa et il était attaché aux prières surérogatoires.",
+    "L'imam Abou Hanîfa fut aussi son élève.",
+    "Sa lecture est transmise par Chou'ba et Hafs, dont les deux variantes sont proches."],r:["shuba","hafs"]},
+hamza:{n:"Hamza",ar:"حمزة",k:"Lecteur",v:"Koufa, Irak",d:"80 – 156 H (≈ 699 – 772)",
+ b:["Hamza vivait à Koufa. Il lisait le Coran en entier chaque jour. Il est mort en Égypte.",
+    "Un jour de canicule, un homme lui proposa de l'eau. Hamza lui demanda : « Tu m'as déjà récité le Coran ? » L'homme répondit : « Oui ! » Hamza refusa l'eau, car il voulait une récompense divine pleine.",
+    "Sa lecture est transmise par Khallâd et Khalaf. Elle est suivie en Égypte."],
+ s:["Arrêt différent sur la hamza au milieu d'un mot.","Naql."],r:["khallad","khalafR"]},
+kisai:{n:"Elkisâ'iy",ar:"الكسائي",k:"Lecteur",v:"Koufa, Irak",d:"décès en 189 H (805)",
+ b:["'Aliy ibn Hamza, dit Elkisâ'iy, était aussi un grand savant de la langue arabe. Il fut l'imam du calife Hâroun Ar-Rachîd et il était extrêmement humble.",
+    "Grand lecteur de Koufa : quand il parlait, c'était comme si un ange parlait.",
+    "Sa lecture est transmise par Eddouriy et Abou lHârith."],r:["douri2","harith"]},
+jafar:{n:"Abou Dja'far",ar:"أبو جعفر",k:"Lecteur",v:"Médine",d:"61 – 130 H (≈ 680 – 747)",
+ b:["Yazîd ibnoul Qa'qâ', dit Abou Dja'far, était un tâbi'iy. Il a lu le Coran à Ibn 'Abbâs et à Abou Hourayra, et il jeûnait un jour sur deux.",
+    "L'imam Mâlik a dit de lui : « C'était un homme pieux qui donnait des fatâwas aux gens de Médine. »",
+    "Il fut le professeur de Nâfi', d'Abou 'Amr, d'Ibn Wardân et de Zayd ibn Aslam, lui-même professeur de l'imam Mâlik.",
+    "Sa lecture est transmise par Ibn Wardân et Ibn Djammâz."],
+ s:["Ikhfâ' sur le ghayn (غ) et le khâ' (خ)."],r:["wardan","djammaz"]},
+yaqub:{n:"Ya'qoûb",ar:"يعقوب",k:"Lecteur",v:"Koufa (selon cette liste)",d:"décès en 205 H (820)",
+ b:["Ya'qoûb vécut 88 ans, comme son père et son grand-père.",
+    "Il était si concentré dans la prière qu'on pouvait lui prendre son rida (châle) sans qu'il s'en aperçoive.",
+    "Sa lecture est transmise par Rawh et Rouways."],r:["rawh","rouways"]},
+khalaf:{n:"Khalaf al-'Âchir",ar:"خلف",k:"Lecteur",v:"Koufa",d:"décès en 229 H (844)",
+ b:["Khalaf est le dixième des lecteurs. Il a terminé le Coran à 10 ans.",
+    "Sa lecture est transmise par Ishâq et Idrîs."],r:["ishaq","idris"]},
+
+qaloun:{n:"Qaloun",ar:"قالون",k:"Rapporteur de Nâfi'",v:"Médine",d:"décès en 220 H (835)",
+ b:["'Îssâ ibn Mînâ, beau-fils de Nâfi'. Son cheikh Nâfi' le surnomma Qaloun, car ce mot voulait dire « excellent » chez les Byzantins.",
+    "Il était sourd mais n'entendait que le Coran, et il corrigeait ses élèves en lisant sur les lèvres.",
+    "Sa variante diffère de celle de Warch. Elle est suivie en Égypte, en Tunisie et en Libye."],of:"nafi"},
+warch:{n:"Warch",ar:"ورش",k:"Rapporteur de Nâfi'",v:"Égypte",d:"Médine · Égypte",
+ b:["'Outhmân ibn Sa'îd, Égyptien, très blanc de peau, blond aux yeux bleus, avec une belle voix. Il a clôturé 4 fois de suite le Coran en un mois.",
+    "Sa variante diffère de celle de Qaloun. C'est l'une des lectures les plus répandues : Médine, Soudan, Maroc, Tunisie, Algérie, Égypte, Sénégal, Mali, etc."],
+ s:["Mad badal de 4 ou 6 temps (2 temps chez Hafs).","Naql.","Amincissement du ra.","Lam emphatique sur un mot autre que Allah, comme « salât »."],of:"nafi"},
+qounboul:{n:"Qounboul",ar:"قنبل",k:"Rapporteur d'Ibn Kathîr",v:"La Mecque",d:"décès en 291 H (904)",
+ b:["Il y a 4 intermédiaires entre Qounboul et Ibn Kathîr.","Il est l'un des deux rapporteurs de la lecture d'Ibn Kathîr, avec Elbazzi."],of:"kathir"},
+bazzi:{n:"Elbazzi",ar:"البزي",k:"Rapporteur d'Ibn Kathîr",v:"La Mecque",d:"décès en 250 H (864)",
+ b:["Imam à La Mecque, muezzin et professeur de beaucoup d'élèves.","Il est l'un des deux rapporteurs de la lecture d'Ibn Kathîr, avec Qounboul."],of:"kathir"},
+douri1:{n:"Eddouri",ar:"الدوري",k:"Rapporteur d'Abou 'Amr",v:"Irak",d:"décès en 246 H (860)",
+ b:["Irakien et professeur. Il est l'un des deux rapporteurs d'Abou 'Amr, avec Essoussi.","Sa lecture est suivie au Soudan."],
+ s:["Imala dans « an-nâs »."],of:"amr"},
+soussi:{n:"Essoussi",ar:"السوسي",k:"Rapporteur d'Abou 'Amr",v:"Irak",d:"décès en 261 H (874)",
+ b:["Essoussi est l'un des deux rapporteurs de la lecture d'Abou 'Amr, avec Eddouri."],
+ s:["Al-idrâm al-kabîr."],of:"amr"},
+hicham:{n:"Hichâm",ar:"هشام",k:"Rapporteur d'Ibn 'Âmir",v:"Châm",d:"décès en 245 H (859)",
+ b:["Il ne levait jamais la tête, par pudeur envers Allah.","Il a prononcé la khotba pendant 20 ans à Damas, sans jamais faire la même.","Il est l'un des deux rapporteurs de la lecture d'Ibn 'Âmir, avec Ibn Dhakwân."],
+ s:["Arrêt sur la hamza."],of:"amir"},
+dhakwan:{n:"Ibn Dhakwân",ar:"ابن ذكوان",k:"Rapporteur d'Ibn 'Âmir",v:"Châm",d:"décès en 242 H (856)",
+ b:["Ibn Dhakwân est l'un des deux rapporteurs de la lecture d'Ibn 'Âmir, avec Hichâm."],of:"amir"},
+shuba:{n:"Chou'ba",ar:"شعبة",k:"Rapporteur de 'Âsim",v:"Koufa, Irak",d:"décès en 193 H (809)",
+ b:["Abou Bakr ibn 'Ayyâch allait voir 'Âsim quelle que soit la météo. On lui attribue 24 000 clôtures du Coran.","Sa variante est proche de celle de Hafs."],of:"asim"},
+hafs:{n:"Hafs Al-Bazzâz",ar:"حفص",k:"Rapporteur de 'Âsim",v:"Koufa",d:"né en 90 H (709)",
+ b:["Hafs est né à Koufa en l'an 90 de l'Hégire, soit 709 de l'ère chrétienne. Il est le beau-fils de son maître 'Âsim.","'Âsim avait une belle voix et vivait à Koufa. Il était attaché aux prières surérogatoires, et l'imam Abou Hanîfa fut aussi son élève.","La lecture de Hafs remonte à Abou 'Abdirrahmân as-Soulamiy, qui la tient de cinq compagnons du Prophète (sahabas).","C'est la lecture la plus répandue aujourd'hui, et l'une des plus faciles. Elle est suivie à La Mecque. Sa variante est proche de celle de Chou'ba."],
+ s:["As-sakt (arrêt sans reprendre son souffle) dans 3 sourates : Al-Kahf, Al-Qiyâma et Al-Moutaffifîn.","Exemple : « Kallâ bal (sakt) rân 'alâ qouloûbihim »."],of:"asim"},
+khallad:{n:"Khallâd",ar:"خلاد",k:"Rapporteur de Hamza",v:"Koufa",d:"décès en 220 H (835)",
+ b:["Abou 'Îssâ. Il est l'un des deux rapporteurs de la lecture de Hamza, avec Khalaf."],of:"hamza"},
+khalafR:{n:"Khalaf",ar:"خلف",k:"Rapporteur de Hamza",v:"Koufa",d:"décès en 229 H (844)",
+ b:["Il enseigne le Coran dès l'âge de 13 ans.","Il est l'un des deux rapporteurs de la lecture de Hamza, avec Khallâd. Il est aussi le dixième lecteur de la liste, avec sa propre lecture."],
+ s:["Pas de nasalisation du noun et du tanwîn devant le waw et le ya."],of:"hamza"},
+douri2:{n:"Eddouriy",ar:"الدوري",k:"Rapporteur d'Elkisâ'iy",v:"Koufa",d:"décès en 246 H (860)",
+ b:["Il est le premier à avoir regroupé et écrit sur les lectures.","Ibn Mâjah rapporte de lui quelques hadiths dans ses Sounan.","Il est l'un des deux rapporteurs de la lecture d'Elkisâ'iy, avec Abou lHârith."],of:"kisai"},
+harith:{n:"Abou lHârith",ar:"أبو الحارث",k:"Rapporteur d'Elkisâ'iy",v:"Koufa",d:"décès en 240 H (854)",
+ b:["Le plus illustre compagnon d'Elkisâ'iy.","Il est l'un des deux rapporteurs de sa lecture, avec Eddouriy."],of:"kisai"},
+wardan:{n:"Ibn Wardân",ar:"ابن وردان",k:"Rapporteur d'Abou Dja'far",v:"Médine",d:"décès en 160 H (777)",
+ b:["Compagnon d'Abou Dja'far. Il est l'un des deux rapporteurs de sa lecture, avec Ibn Djammâz."],of:"jafar"},
+djammaz:{n:"Ibn Djammâz",ar:"ابن جماز",k:"Rapporteur d'Abou Dja'far",v:"Médine",d:"décès en 170 H (786)",
+ b:["Il a aussi récité le Coran auprès de Nâfi'.","Il est l'un des deux rapporteurs de la lecture d'Abou Dja'far, avec Ibn Wardân."],of:"jafar"},
+rawh:{n:"Rawh",ar:"روح",k:"Rapporteur de Ya'qoûb",v:"—",d:"décès en 234 H (849)",
+ b:["Rawh est l'un des deux rapporteurs de la lecture de Ya'qoûb, avec Rouways."],of:"yaqub"},
+rouways:{n:"Rouways",ar:"رويس",k:"Rapporteur de Ya'qoûb",v:"—",d:"décès en 238 H (852)",
+ b:["Rouways est l'un des deux rapporteurs de la lecture de Ya'qoûb, avec Rawh."],of:"yaqub"},
+ishaq:{n:"Ishâq",ar:"إسحاق",k:"Rapporteur de Khalaf",v:"—",d:"décès en 286 H (899)",
+ b:["Ishâq est l'un des deux rapporteurs de la lecture de Khalaf, avec Idrîs."],of:"khalaf"},
+idris:{n:"Idrîs",ar:"إدريس",k:"Rapporteur de Khalaf",v:"Bagdad",d:"décès en 292 H (905)",
+ b:["Idrîs était de Bagdad. Il est l'un des deux rapporteurs de la lecture de Khalaf, avec Ishâq."],of:"khalaf"}
+};
+
+var order=["nafi","kathir","amr","amir","asim","hamza","kisai","jafar","yaqub","khalaf"];
+var regs=[
+ ["hafs","La Mecque. La plus répandue aujourd'hui, et l'une des plus faciles."],
+ ["warch","Médine, Soudan, Maroc, Tunisie, Algérie, Égypte, Sénégal, Mali, etc."],
+ ["qaloun","Égypte, Tunisie, Libye."],
+ ["hamza","Égypte."],
+ ["douri1","Soudan."]
+];
+
+var grid=document.getElementById('grid'),h='';
+order.forEach(function(id,i){
+  var p=P[id];
+  h+='<div class="card"><span class="num">'+(i+1)+'</span>'
+   +'<button class="rd" data-id="'+id+'">'+p.n+'</button>'
+   +'<div class="meta">'+p.v+' · <span class="ar" style="font-size:22px">'+p.ar+'</span></div>'
+   +'<div class="chips">'+p.r.map(function(r){return '<button class="ch" data-id="'+r+'">'+P[r].n+'</button>'}).join('')+'</div></div>';
+});
+grid.innerHTML=h;
+
+document.getElementById('regions').innerHTML=regs.map(function(r){
+  return '<div class="reg"><button class="rg" data-id="'+r[0]+'">'+P[r[0]].n+'</button><br>'+r[1]+'</div>';
+}).join('');
+
+var ov=document.getElementById('ov'),mc=document.getElementById('mc');
+
+function openM(id){
+  var p=P[id],t='';
+  t+='<div class="kind">'+p.k+'</div><div class="ar-name ar">'+p.ar+'</div><h3>'+p.n+'</h3>';
+  t+='<svg style="display:block;margin:6px auto 4px" width="110" height="10" viewBox="0 0 110 10" aria-hidden="true"><line x1="0" y1="5" x2="46" y2="5" stroke="#8e6c24"/><line x1="64" y1="5" x2="110" y2="5" stroke="#8e6c24"/><rect x="50" y="1" width="8" height="8" fill="#8c2f2b" transform="rotate(45 54 5)"/></svg>';
+  t+='<div class="facts"><span>'+p.v+'</span><span>'+p.d+'</span></div>';
+  t+='<div class="bio">'+p.b.map(function(x){return '<p>'+x+'</p>'}).join('')+'</div>';
+  if(p.s){t+='<div class="sp"><span>Particularités</span><ul>'+p.s.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>'}
+  var l='';
+  if(p.r){l='<span>Ses rapporteurs</span>'+p.r.map(function(r){return '<button class="ch" data-id="'+r+'">'+P[r].n+'</button>'}).join('')}
+  else if(p.of){l='<span>Lecteur</span><button class="ch" data-id="'+p.of+'">'+P[p.of].n+'</button>'}
+  if(l)t+='<div class="links">'+l+'</div>';
+  mc.innerHTML=t;
+  ov.classList.add('on');
+  ov.scrollTop=0;
+  document.body.style.overflow='hidden';
+}
+function closeM(){
+  ov.classList.remove('on');
+  document.body.style.overflow='';
+}
+
+document.addEventListener('click',function(e){
+  var b=e.target.closest('button[data-id]');
+  if(b){openM(b.getAttribute('data-id'));return}
+  if(e.target.id==='cl'||e.target===ov)closeM();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM()});
+</script>
+</body>
+</html>
